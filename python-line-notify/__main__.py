@@ -27,8 +27,13 @@ class Client(object):
 
     def send_massage_and_image(self, content: str, image_path: str):
         binary_image = open(image_path, mode='rb')
-        image = {'imageFile': binary_image}
-        r = requests.post(LINE_API_URL, headers=self._get_headers(), data={'message': {content}}, files=image)
+        try:
+            image = {'imageFile': binary_image}
+            r = requests.post(LINE_API_URL, headers=self._get_headers(), data={'message': {content}}, files=image)
+        except Exception:
+            pass
+        finally:
+            binary_image.close()
 
 def main():
     client = Client(env.TOKEN)
