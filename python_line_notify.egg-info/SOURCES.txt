@@ -1,7 +1,8 @@
 README.md
 setup.py
-python-line-notify/__init__.py
-python-line-notify/__main__.py
+python_line_notify/__init__.py
+python_line_notify/__main__.py
+python_line_notify/exceptions.py
 python_line_notify.egg-info/PKG-INFO
 python_line_notify.egg-info/SOURCES.txt
 python_line_notify.egg-info/dependency_links.txt

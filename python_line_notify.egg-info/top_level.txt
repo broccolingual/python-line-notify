@@ -1,1 +1,1 @@
-python-line-notify
+python_line_notify
