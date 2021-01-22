@@ -1,8 +1,8 @@
 from setuptools import setup
 
 install_requires = [
-    "requests",
-    "python-dotenv"
+    "requests==2.25.1",
+    "python-dotenv==0.15.0"
 ]
 
 packages = [
@@ -10,7 +10,7 @@ packages = [
 ]
 
 setup(
-    name='python-line-notify',
+    name='python_line_notify',
     version='1.0.0',
     packages=packages,
     install_requires=install_requires,
