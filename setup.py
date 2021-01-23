@@ -1,11 +1,12 @@
 from setuptools import setup
 
 install_requires = [
-    "requests==2.25.1"
+    "requests==2.25.1",
+    "pillow==8.1.0",
 ]
 
 packages = [
-    'python_line_notify'
+    'python_line_notify',
 ]
 
 setup(
