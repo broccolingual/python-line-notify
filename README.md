@@ -2,7 +2,7 @@
 
 [こちら](https://github.com/broccolingual/python-line-notify/tree/master/dist)
 から対応するバージョンのwhlファイルをインストールし、パスを指定して`pip install`を行う。
-<br>`pip install ~/python_line_notify-1.0.0-py3-none-any.whl`
+<br>`pip install ~/python_line_notify-1.1.0-py3-none-any.whl`
 
 ```python
 import python_line_notify
