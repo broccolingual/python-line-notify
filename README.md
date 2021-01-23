@@ -19,3 +19,6 @@ client.send(content='image from URL', image='https://~~~~~/~~~.jpg', notify=True
 ## Line Notify API Document
 
 https://notify-bot.line.me/doc/ja/
+
+## License
+MIT
