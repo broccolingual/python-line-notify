@@ -11,7 +11,7 @@ packages = [
 
 setup(
     name='python_line_notify',
-    version='1.0.0',
+    version='1.1.0',
     packages=packages,
     install_requires=install_requires,
     author="Broccolingual",
