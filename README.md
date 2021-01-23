@@ -21,4 +21,4 @@ client.send(content='image from URL', image='https://~~~~~/~~~.jpg', notify=True
 https://notify-bot.line.me/doc/ja/
 
 ## License
-MIT
+MIT License
