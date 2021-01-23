@@ -22,7 +22,7 @@ client.send(content='image from URL', image='https://~~~~~/~~~.jpg', notify=True
 ### Step.1
 
 下記のリンクからLine Notifyのページにアクセスして、通知を行いたいLineアカウントでログイン。
-URL -> https://notify-bot.line.me/ja/
+<br>URL -> https://notify-bot.line.me/ja/
 
 ### Step.2
 
@@ -38,7 +38,8 @@ URL -> https://notify-bot.line.me/ja/
 
 ### Step.4
 
-トークンに利用する名前(適当で良い ※ただし、通知時にその名前が表示されるので注意)を入力し、通知を送信するトークルームを一つ選択して、「発行する」を押す。(※「1:1でLine Notifyから通知を受け取る」にしておけば、自分自身に通知を送信できる)
+トークンに利用する名前(適当で良い ※ただし、通知時にその名前が表示されるので注意)を入力し、通知を送信するトークルームを一つ選択して、「発行する」を押す。
+<br>`※「1:1でLine Notifyから通知を受け取る」にしておけば、自分自身に通知を送信できる`
 <br>
 ![step4](https://gyazo.com/81025477655f54f8ddf08f198dc87b46.png)
 
