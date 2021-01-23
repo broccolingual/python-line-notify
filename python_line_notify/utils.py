@@ -1,7 +1,7 @@
 import re
 from io import BytesIO
-from urllib.request import urlopen
 from urllib.parse import urlparse
+from urllib.request import urlopen
 
 from PIL import Image
 
