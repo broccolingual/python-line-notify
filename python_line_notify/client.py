@@ -26,7 +26,7 @@ class Client(object):
         else:
             raise NoTokenError
 
-    def send(self, content: str=None, image: str=None, notify: bool=False):
+    def send(self, content: str=None, image: str=None, sticker: tuple=None, notify: bool=True):
         """Line Notifyにメッセージを送る
 
         Parameters
@@ -37,9 +37,14 @@ class Client(object):
         image: str, default None (optional)
             画像の相対パス もしくは 画像URL(jpgのみ)
 
-        notify: bool, default False (optional)
-            True: 通知されない
-            False: 通知される(デフォルト)
+        sticker: tuple, default None (optional)
+            第1引数: StickerPackageID: int
+            第2引数: StickerID: int
+            ※どちらも必須
+
+        notify: bool, default True (optional)
+            True: 通知される(デフォルト)
+            False: 通知されない
         """
         if content is not None and 1 <= len(content) <= 1000:
             payload = {"message": content}
@@ -48,22 +53,26 @@ class Client(object):
             if image is not None:
                 if is_url(image) is True and is_jpg(image) is True:
                     width, height = get_image_size(image)
-                    if width <= 2048 and height <= 2048: # imageThumbnail - max 240px x 240px
+                    if width <= 2048 and height <= 2048: 
                         payload.update({
                             'imageThumbnail': image,
-                            'imageFullsize': image
+                            'imageFullsize': image,
                         })
 
                 elif is_url(image) is False:
                     binary_image = open(image, mode='rb')
                     imageFile = {'imageFile': binary_image}
 
-            if notify is True:
+            if notify is False:
                 payload.update({
-                    'notificationDisabled': 'true'
+                    'notificationDisabled': 'true',
+                })
+
+            if sticker is not None:
+                payload.update({
+                    'stickerPackageId': sticker[0],
+                    'stickerId': sticker[1],
                 })
             
             r = requests.post(LINE_API_URL, headers=self._get_headers(), data=payload, files=imageFile)
-            if r.status_code != 200:
-                print(r.status_code)
-                print(r.content)
+            return r

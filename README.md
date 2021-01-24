@@ -15,6 +15,11 @@ client.send(content='image from File', image='./test/wumpus.png')
 
 # URLから画像を添付(jpgのみ), 通知OFF
 client.send(content='image from URL', image='https://~~~~~/~~~.jpg', notify=True)
+
+# StickerIDからステッカーを添付
+# (StickerPackageId, StickerId)
+# https://devdocs.line.me/files/sticker_list.pdf
+client.send(content='sticker from ids', sticker=(2, 141))
 ```
 
 ## トークンの発行方法(必須)

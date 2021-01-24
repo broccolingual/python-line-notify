@@ -1,6 +1,7 @@
 README.md
 setup.py
 python_line_notify/__init__.py
+python_line_notify/__version__.py
 python_line_notify/client.py
 python_line_notify/exceptions.py
 python_line_notify/utils.py
