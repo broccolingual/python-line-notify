@@ -1,26 +1,39 @@
+import os
+
 from setuptools import setup
 
-install_requires = [
-    "requests==2.25.1",
-    "pillow==8.1.0",
-]
+requirements = []
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
+current_dir = os.path.abspath(os.path.dirname(__file__))
+
+about = {}
+with open(os.path.join(current_dir, 'python_line_notify', '__init__.py'), 'r', 'utf-8') as f:
+    exec(f.read(), about)
+
+with open('README.md', 'r', 'utf-8') as f:
+    readme = f.read()
 
 packages = [
     'python_line_notify',
 ]
 
 setup(
-    name='python_line_notify',
-    version='1.1.0',
+    name=about['__title__'],
+    version=about['__version__'],
+    long_description=readme,
+    long_description_content_type='text/markdown',
+    author=about['__author__'],
+    author_email=about['__author_email__'],
+    url=about['__url__'],
     packages=packages,
-    install_requires=install_requires,
-    author="Broccolingual",
-    author_email="broccolingual@gmail.com",
-    url="https://github.com/broccolingual/python-line-notify",
+    install_requires=requirements,
+    python_requires='>=3.7',
+    license=about['__license__'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7',
 )
