@@ -2,7 +2,9 @@
 
 [こちら](https://github.com/broccolingual/python-line-notify/tree/master/dist)
 から対応するバージョンのwhlファイルをインストールし、パスを指定して`pip install`を行う。
-<br>`pip install ~/python_line_notify-1.1.0-py3-none-any.whl`
+<br>`pip install ~/python_line_notify-1.2.0a0-py3-none-any.whl`
+<br>**OR**
+<br>`python -m pip install ~/python_line_notify-1.2.0a0-py3-none-any.whl`
 
 ```python
 import python_line_notify
@@ -55,4 +57,4 @@ client.send(content='sticker from ids', sticker=(2, 141))
 https://notify-bot.line.me/doc/ja/
 
 ## License
-MIT License
+MIT
